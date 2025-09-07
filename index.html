@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santhosh Kumar M | Angular Developer</title>
+    <meta name="description" content="Angular Developer with 2.5+ years of experience in FinTech platforms, building scalable UIs for Fortune 500 clients">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #ff8300 0%, #f72585 50%, #8E008B 100%);
+            --secondary-gradient: linear-gradient(135deg, #FF8300 0%, #FF6200 50%, #f72585 100%);
+            --accent-gradient: linear-gradient(135deg, #FF6200 0%, #f72585 100%);
+            --dark-gradient: linear-gradient(135deg, #2e005d 0%, #1a1a2e 100%);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #b8c5d6;
+            --text-accent: #FF8300;
+            --shadow-glow: 0 20px 40px rgba(46, 0, 93, 0.4);
+            --shadow-card: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-gradient);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 4s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 70%;
+            right: 10%;
+            width: 120px;
+            height: 120px;
+            background: var(--secondary-gradient);
+            border-radius: 20px;
+            animation-delay: -5s;
+        }
+
+        .shape:nth-child(3) {
+            top: 40%;
+            left: 70%;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            transform: rotate(45deg);
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background: rgba(12, 12, 12, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .download-resume {
+            background: var(--secondary-gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-resume:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 131, 0, 0.4);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 50px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--glass-border);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 25px 50px rgba(255, 131, 0, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .profile-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .profile-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-cta {
+            background: var(--secondary-gradient);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            margin: 15px 0;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(255, 131, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 131, 0, 0.4);
+        }
+
+        .contact-cta .phone {
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-cta .email {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-gradient);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .skill-category {
+            padding: 30px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-accent);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-gradient);
+            transform: translateY(-2px);
+        }
+
+        .experience-timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 25px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-gradient);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -37px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(46, 0, 93, 0.5);
+        }
+
+        .timeline-content {
+            padding: 30px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-accent);
+        }
+
+        .timeline-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content ul,
+        .project-description + ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            list-style: none;
+        }
+
+        .timeline-content ul li,
+        .project-description + ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-content ul li::before,
+        .project-description + ul li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--text-accent);
+            font-size: 0.8rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-gradient);
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-accent);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(255, 131, 0, 0.1);
+            color: var(--text-accent);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .achievements-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .achievement-item {
+            padding: 20px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info {
+            padding: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: var(--glass-bg);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-item.clickable {
+            cursor: pointer;
+        }
+
+        .contact-item.clickable:hover {
+            background: rgba(255, 131, 0, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--text-accent);
+            box-shadow: 0 0 20px rgba(255, 131, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-text {
+            flex: 1;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .nav-right {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .timeline-item {
+                padding-left: 0;
+            }
+            
+            .experience-timeline {
+                padding-left: 20px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .skill-category,
+            .project-card {
+                max-width: 400px;
+                width: 100%;
+            }
+
+            .achievements-list {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .achievement-item {
+                max-width: 300px;
+                width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid var(--text-accent);
+            white-space: nowrap;
+            animation: typewriter 4s steps(40) 1s forwards, blink 0.8s infinite;
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: var(--text-accent); }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">SK.dev</div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#" class="download-resume" onclick="downloadResume()">
+                    <i class="fas fa-download"></i>
+                    Resume
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        Hi, I'm <span class="gradient-text">Santhosh Kumar M</span>
+                    </h1>
+                    <p class="subtitle typewriter">Angular Developer & FinTech Specialist</p>
+                    <div class="hero-description">
+                        With 2.5+ years of experience building scalable, high-performance UIs for Fortune 500 FinTech platforms. 
+                        I specialize in Angular 12+, TypeScript, and creating exceptional user experiences for global financial institutions like Barclays, BlackStone, and Apollo Global Management.
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="#projects" class="btn btn-secondary">View Projects</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-card glass-card">
+                        <div class="profile-avatar">SK</div>
+                        <div class="profile-info">
+                            <h3>Santhosh Kumar M</h3>
+                            <p>Angular Developer<br>Theni, Tamil Nadu, India</p>
+                            <div class="contact-cta">
+                                <div class="phone">📞 +91 8124258694</div>
+                                <div class="email">✉️ santhoshkumar3@gmail.com</div>
+                            </div>
+                            <div class="social-links">
+                                <a href="https://linkedin.com/in/santhosh-kumar-m4" class="social-link" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/santhosh-kumar-m4" class="social-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <h3><i class="fab fa-angular"></i> Frontend Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Angular 12+</span>
+                        <span class="skill-tag">ReactJS</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">RxJS</span>
+                        <span class="skill-tag">Redux</span>
+                        <span class="skill-tag">Angular Material</span>
+                        <span class="skill-tag">PrimeNG</span>
+                        <span class="skill-tag">Syncfusion</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">SCSS</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-palette"></i> UI/UX & Styling</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">WCAG Accessibility</span>
+                        <span class="skill-tag">AF Grid</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe XD</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-server"></i> Backend & APIs</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">JDBC</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">API Integration</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-robot"></i> AI & Testing Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Cursor AI</span>
+                        <span class="skill-tag">GitHub Copilot</span>
+                        <span class="skill-tag">Jasmine</span>
+                        <span class="skill-tag">Karma</span>
+                        <span class="skill-tag">Jest</span>
+                        <span class="skill-tag">Playwright</span>
+                        <span class="skill-tag">React Testing Library</span>
+                        <span class="skill-tag">SonarQube</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Bitbucket</span>
+                        <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">Confluence</span>
+                        <span class="skill-tag">Agile Scrum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Professional Journey</h2>
+            <div class="experience-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Software Engineer - 73 Strings</h3>
+                        <div class="timeline-meta">
+                            <i class="fas fa-calendar"></i> June 2023 - Present | 
+                            <i class="fas fa-map-marker-alt"></i> Bengaluru, India
+                        </div>
+                        <p><strong>Product-based FinTech company</strong> providing AI-driven portfolio valuation and monitoring solutions for global private equity and institutional investors.</p>
+                        <ul>
+                            <li>Built Angular 12+ UI components with lazy loading and OnPush change detection, reducing load times by 30-60% for 10K+ financial records</li>
+                            <li>Developed valuation dashboards and trading platforms implementing IRR, MOIC, XIRR, and NAV calculations with multi-currency support</li>
+                            <li>Implemented Excel pipelines (import/export, templates) reducing manual processing by 85% across 500+ property records</li>
+                            <li>Applied responsive design & WCAG accessibility standards using Tailwind, Bootstrap, Angular Material, and PrimeNG</li>
+                            <li>Collaborated with product managers and designers in Agile Scrum, delivering 2-3 internationalized features per quarter</li>
+                            <li><strong>Distinguished Clients:</strong> Barclays, BlackStone, Apollo Global Management, Government of UAE, Saudi PIF</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Programmer Analyst Trainee - Cognizant</h3>
+                        <div class="timeline-meta">
+                            <i class="fas fa-calendar"></i> Dec 2021 - May 2022 | 
+                            <i class="fas fa-map-marker-alt"></i> Chennai, India
+                        </div>
+                        <p><strong>Internship Program</strong> focused on enterprise-grade application development and Agile methodologies.</p>
+                        <ul>
+                            <li>Contributed to Payroll Management System using Angular 8, Spring Boot, JDBC, and REST APIs</li>
+                            <li>Completed Angular Java Suite certification with focus on microservices architecture</li>
+                            <li>Gained hands-on expertise in Agile/Scrum methodologies and collaborative development practices</li>
+                            <li>Developed foundational skills in full-stack development and enterprise software design patterns</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Multiple Internships & Training</h3>
+                        <div class="timeline-meta">
+                            <i class="fas fa-calendar"></i> 2021 | 
+                            <i class="fas fa-map-marker-alt"></i> Chennai, India
+                        </div>
+                        <ul>
+                            <li><strong>CREDO SYSTEMZ:</strong> Web Development Internship - HTML5, CSS3, JavaScript, AngularJS, MongoDB. Built Blood Bank System project</li>
+                            <li><strong>RETECH SOLUTIONS:</strong> Core Python Programming training with hands-on projects including LUDO game development</li>
+                            <li><strong>Cognizant Digital Nurture:</strong> Summer Intern program covering OOP, Web Development, and RDBMS with micro-certifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card glass-card">
+                    <h3>Real-Estate Comparable Valuation Analysis</h3>
+                    <div class="project-description">
+                        Built comprehensive property comparison system for <strong>Government of UAE & Saudi Arabia PIF</strong> with advanced filtering algorithms and automated Excel processing capabilities.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Angular 12+</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Excel.js</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">RxJS</span>
+                    </div>
+                    <ul>
+                        <li>Reduced manual valuation work by 45% through intelligent filtering</li>
+                        <li>Processed 500+ property records with 60% error reduction</li>
+                        <li>Implemented multi-currency support and real-time calculations</li>
+                    </ul>
+                </div>
+
+                <div class="project-card glass-card">
+                    <h3>Discount-to-Sale Portfolio Risk Analysis</h3>
+                    <div class="project-description">
+                        Developed sophisticated cash flow prediction and risk analysis platform for <strong>Barclays & BlackStone</strong> with weighted probability models and discount factor engines.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Angular Material</span>
+                        <span class="tech-tag">Financial APIs</span>
+                        <span class="tech-tag">AF Grid</span>
+                        <span class="tech-tag">Chart.js</span>
+                        <span class="tech-tag">SCSS</span>
+                    </div>
+                    <ul>
+                        <li>Improved forecast accuracy by 35% using ML algorithms</li>
+                        <li>Enhanced decision quality by 25% through probability models</li>
+                        <li>Real-time risk assessment with interactive dashboards</li>
+                    </ul>
+                </div>
+
+                <div class="project-card glass-card">
+                    <h3>AI-Driven Portfolio Valuation Platform</h3>
+                    <div class="project-description">
+                        Architected enterprise-scale portfolio monitoring system serving global private equity firms with real-time data processing and advanced analytics capabilities.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Angular 12+</span>
+                        <span class="tech-tag">PrimeNG</span>
+                        <span class="tech-tag">Syncfusion</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">SonarQube</span>
+                    </div>
+                    <ul>
+                        <li>30-60% performance improvement with lazy loading</li>
+                        <li>Supports 10K+ financial records with real-time updates</li>
+                        <li>Multi-tenant architecture for global deployment</li>
+                    </ul>
+                </div>
+
+                <div class="project-card glass-card">
+                    <h3>Excel Workflow Automation System</h3>
+                    <div class="project-description">
+                        Created comprehensive Excel import/export system with template generation, data validation, and automated processing workflows for financial institutions.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Excel.js</span>
+                        <span class="tech-tag">File API</span>
+                        <span class="tech-tag">Validators</span>
+                        <span class="tech-tag">RxJS</span>
+                    </div>
+                    <ul>
+                        <li>85% reduction in manual processing time</li>
+                        <li>Automated validation and error handling</li>
+                        <li>Support for complex financial calculations</li>
+                    </ul>
+                </div>
+
+                <div class="project-card glass-card">
+                    <h3>Retinal Image Processing System</h3>
+                    <div class="project-description">
+                        Developed medical imaging analysis system using neural networks and deep learning for automated retinal disease detection and diagnosis.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">Neural Networks</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">TensorFlow</span>
+                    </div>
+                    <ul>
+                        <li>Published research paper on medical image processing</li>
+                        <li>Implemented CNN-based classification models</li>
+                        <li>Achieved high accuracy in automated diagnosis</li>
+                    </ul>
+                </div>
+
+                <div class="project-card glass-card">
+                    <h3>Blood Bank Management System</h3>
+                    <div class="project-description">
+                        Built comprehensive blood bank management system during internship at CREDO SYSTEMZ with donor management, inventory tracking, and request processing.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">AngularJS</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <ul>
+                        <li>Complete donor and recipient management</li>
+                        <li>Blood inventory tracking and expiry monitoring</li>
+                        <li>Search and matching algorithms for blood requests</li>
+                    </ul>
+                </div>
+
+                <!-- <div class="project-card glass-card">
+                    <h3>LUDO Game Development</h3>
+                    <div class="project-description">
+                        Created interactive LUDO game using Core Python during internship at RETECH SOLUTIONS with game logic, player management, and turn-based mechanics.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Core Python</span>
+                        <span class="tech-tag">Game Logic</span>
+                        <span class="tech-tag">OOP</span>
+                        <span class="tech-tag">Algorithms</span>
+                        <span class="tech-tag">UI Design</span>
+                    </div>
+                    <ul>
+                        <li>Implemented complete game mechanics and rules</li>
+                        <li>Multi-player support with turn-based gameplay</li>
+                        <li>Clean code architecture with object-oriented design</li>
+                    </ul>
+                </div>
+
+                <div class="project-card glass-card">
+                    <h3>Payroll Management System</h3>
+                    <div class="project-description">
+                        Contributed to enterprise-grade payroll system during Cognizant internship with employee management, salary calculations, and reporting features.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Angular 8</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">JDBC</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">Microservices</span>
+                    </div>
+                    <ul>
+                        <li>Full-stack development with modern frameworks</li>
+                        <li>Database integration and API development</li>
+                        <li>Agile development practices and team collaboration</li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Achievements & Recognition</h2>
+            <div class="achievements-list">
+                <div class="achievement-item">
+                    <div class="achievement-icon">🏆</div>
+                    <h3>Spotlight Winner</h3>
+                    <p>February 2025 - Recognized for delivering business-critical features at 73 Strings</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">⭐</div>
+                    <h3>Client Satisfaction</h3>
+                    <p>95%+ client satisfaction across multiple sprint releases with Fortune 500 clients</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">🚀</div>
+                    <h3>Performance Optimization</h3>
+                    <p>30-60% load time reduction for enterprise applications handling 10K+ records</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">📈</div>
+                    <h3>Process Improvement</h3>
+                    <p>85% reduction in manual processing through automated Excel workflows</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">🎯</div>
+                    <h3>Feature Delivery</h3>
+                    <p>2-3 internationalized features delivered per quarter in Agile environment</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">🌟</div>
+                    <h3>Team Recognition</h3>
+                    <p>Multiple appreciations in Sprint Retrospectives for collaboration and timely delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <h2 class="section-title gradient-text">Certifications & Education</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-certificate"></i> Recent Certifications</h3>
+                    <div style="color: var(--text-secondary); line-height: 1.8;">
+                        <p>✅ <strong>Angular - The Complete Guide</strong> (Udemy, 2025)</p>
+                        <p>✅ <strong>AI for Everyone</strong> (Coursera, 2025)</p>
+                        <p>🔄 <strong>AWS Cloud Practitioner</strong> (In Progress)</p>
+                        <p>✅ <strong>HTML, CSS, JavaScript for Web Developers</strong> (Coursera)</p>
+                        <p>✅ <strong>MySQL Database Management</strong></p>
+                        <p>✅ <strong>C Programming Fundamentals</strong></p>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div style="color: var(--text-secondary);">
+                        <h4 style="color: var(--text-accent); margin-bottom: 10px;">B.Tech - Information Technology</h4>
+                        <p><strong>Sathyabama Institute of Science & Technology, Chennai</strong></p>
+                        <p>2018 - 2022 | CGPA: 8.12/10</p>
+                        <br>
+                        <p>Specialized coursework in:</p>
+                        <ul style="margin-top: 10px; padding-left: 20px; list-style: none;">
+                            <li style="position: relative; padding-left: 20px; margin-bottom: 5px;">
+                                <span style="position: absolute; left: 0; color: var(--text-accent);">▶</span>
+                                Data Structures & Algorithms
+                            </li>
+                            <li style="position: relative; padding-left: 20px; margin-bottom: 5px;">
+                                <span style="position: absolute; left: 0; color: var(--text-accent);">▶</span>
+                                Web Technologies
+                            </li>
+                            <li style="position: relative; padding-left: 20px; margin-bottom: 5px;">
+                                <span style="position: absolute; left: 0; color: var(--text-accent);">▶</span>
+                                Database Management Systems
+                            </li>
+                            <li style="position: relative; padding-left: 20px; margin-bottom: 5px;">
+                                <span style="position: absolute; left: 0; color: var(--text-accent);">▶</span>
+                                Software Engineering
+                            </li>
+                            <li style="position: relative; padding-left: 20px; margin-bottom: 5px;">
+                                <span style="position: absolute; left: 0; color: var(--text-accent);">▶</span>
+                                Computer Networks
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-medal"></i> Research & Publications</h3>
+                    <div style="color: var(--text-secondary);">
+                        <h4 style="color: var(--text-accent); margin-bottom: 10px;">Research Publication</h4>
+                        <p><strong>"Retinal Image Processing Using Neural Network with Deep Learning"</strong></p>
+                        <p>Applied machine learning techniques for medical image analysis and automated diagnosis systems.</p>
+                        <br>
+                        <p>Key contributions:</p>
+                        <ul style="margin-top: 10px; padding-left: 20px; list-style: none;">
+                            <li style="position: relative; padding-left: 20px; margin-bottom: 5px;">
+                                <span style="position: absolute; left: 0; color: var(--text-accent);">▶</span>
+                                Deep learning model development
+                            </li>
+                            <li style="position: relative; padding-left: 20px; margin-bottom: 5px;">
+                                <span style="position: absolute; left: 0; color: var(--text-accent);">▶</span>
+                                Medical image preprocessing
+                            </li>
+                            <li style="position: relative; padding-left: 20px; margin-bottom: 5px;">
+                                <span style="position: absolute; left: 0; color: var(--text-accent);">▶</span>
+                                Neural network optimization
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info glass-card">
+                    <h3 style="margin-bottom: 30px; color: var(--text-accent);">Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>santhoshkumar3@gmail.com</p>
+                            <small>manisandy2304@gmail.com</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 8124258694</p>
+                            <small>Available 9 AM - 7 PM IST</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Theni, Tamil Nadu, India</p>
+                            <small>Open to remote opportunities</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item clickable" onclick="openLinkedIn()">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p>santhosh-kumar-m4</p>
+                            <small>Professional networking</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item clickable" onclick="openGitHub()">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p>santhosh-kumar-m4</p>
+                            <small>Code repositories & projects</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form glass-card">
+                    <h3 style="margin-bottom: 30px; color: var(--text-accent);">Send Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; 2025 Santhosh Kumar M. Crafted with 💜 and modern web technologies.</p>
+                <p style="margin-top: 10px; color: var(--text-secondary); font-size: 0.9rem;">
+                    Angular Developer | FinTech Specialist | Building the Future of Finance
+                </p>
+            </div>
+            <a href="#" class="download-resume" onclick="downloadResume()">
+                <i class="fas fa-download"></i>
+                Download Resume
+            </a>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Create stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numStars = 100;
+            
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        function smoothScroll() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Scroll to top functionality
+        function handleScrollTop() {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Form submission
+        function handleForm() {
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+                
+                // Create mailto link
+                const subject = encodeURIComponent(data.subject);
+                const body = encodeURIComponent(
+                    `Name: ${data.name}\n` +
+                    `Email: ${data.email}\n` +
+                    `Company: ${data.company || 'Not specified'}\n\n` +
+                    `Message:\n${data.message}`
+                );
+                
+                const mailtoLink = `mailto:santhoshkumar3@gmail.com?subject=${subject}&body=${body}`;
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                alert('Thank you for your message! Your default email client will open.');
+                form.reset();
+            });
+        }
+
+        // Intersection Observer for animations
+        function handleIntersectionObserver() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all cards
+            const cards = document.querySelectorAll('.glass-card, .timeline-item, .achievement-item');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        }
+
+        // Typing effect for subtitle
+        function typeWriter() {
+            const subtitle = document.querySelector('.typewriter');
+            if (subtitle) {
+                const text = subtitle.textContent;
+                subtitle.textContent = '';
+                subtitle.style.width = '0';
+                
+                setTimeout(() => {
+                    subtitle.style.width = '100%';
+                    let i = 0;
+                    const timer = setInterval(() => {
+                        subtitle.textContent = text.slice(0, i + 1);
+                        i++;
+                        if (i === text.length) {
+                            clearInterval(timer);
+                            setTimeout(() => {
+                                subtitle.style.borderRight = 'none';
+                            }, 1000);
+                        }
+                    }, 100);
+                }, 1000);
+            }
+        }
+
+        // Parallax effect for floating shapes
+        function handleParallax() {
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const shapes = document.querySelectorAll('.shape');
+                
+                shapes.forEach((shape, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    const yPos = -(scrolled * speed);
+                    shape.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
+                });
+            });
+        }
+
+        // LinkedIn and GitHub click handlers
+        function openLinkedIn() {
+            window.open('https://www.linkedin.com/in/santhosh-kumar-m4', '_blank');
+        }
+
+        function openGitHub() {
+            window.open('https://github.com/santhosh-kumar-m4', '_blank');
+        }
+
+        // Resume download function
+        function downloadResume() {
+            // Create a temporary link to download resume
+            // You can replace this with actual resume file URL
+            const link = document.createElement('a');
+            link.href = 'data:text/plain;charset=utf-8,Resume will be available soon. Please contact via email: santhoshkumar3@gmail.com';
+            link.download = 'Santhosh_Kumar_M_Resume.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Alternative: Open email for resume request
+            // window.location.href = 'mailto:santhoshkumar3@gmail.com?subject=Resume Request&body=Hello, I would like to request your resume.';
+        }
+
+        // Initialize all functions
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            smoothScroll();
+            handleScrollTop();
+            handleForm();
+            handleIntersectionObserver();
+            typeWriter();
+            handleParallax();
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
