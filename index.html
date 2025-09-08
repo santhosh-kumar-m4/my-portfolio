@@ -11,17 +11,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #ff8300 0%, #f72585 50%, #8E008B 100%);
-            --secondary-gradient: linear-gradient(135deg, #FF8300 0%, #FF6200 50%, #f72585 100%);
-            --accent-gradient: linear-gradient(135deg, #FF6200 0%, #f72585 100%);
-            --dark-gradient: linear-gradient(135deg, #2e005d 0%, #1a1a2e 100%);
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --primary-gradient: linear-gradient(135deg, #00072D 0%, #001C55 25%, #0A2472 50%, #0E6BA8 75%, #A8E1FA 100%);
+            --secondary-gradient: linear-gradient(135deg, #00072D 0%, #0E6BA8 100%);
+            --accent-gradient: linear-gradient(135deg, #0A2472 0%, #0E6BA8 100%);
+            --dark-gradient: linear-gradient(135deg, #00072D 0%, #001C55 100%);
+            --glass-bg: rgba(14, 107, 168, 0.1);
+            --glass-border: rgba(168, 225, 250, 0.2);
             --text-primary: #ffffff;
-            --text-secondary: #b8c5d6;
-            --text-accent: #FF8300;
-            --shadow-glow: 0 20px 40px rgba(46, 0, 93, 0.4);
-            --shadow-card: 0 8px 32px rgba(31, 38, 135, 0.37);
+            --text-secondary: #e0e0e0;
+            --text-accent: #A8E1FA;
+            --shadow-glow: 0 20px 40px rgba(14, 107, 168, 0.3);
+            --shadow-card: 0 8px 32px rgba(10, 36, 114, 0.2);
         }
 
         * {
@@ -214,7 +214,7 @@
 
         .download-resume:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 131, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(14, 107, 168, 0.4);
         }
 
         .hero {
@@ -291,7 +291,7 @@
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 25px 50px rgba(255, 131, 0, 0.4);
+            box-shadow: 0 25px 50px rgba(14, 107, 168, 0.4);
         }
 
         .hero-image {
@@ -341,13 +341,13 @@
             margin: 15px 0;
             font-weight: 600;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(255, 131, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(14, 107, 168, 0.3);
             transition: all 0.3s ease;
         }
 
         .contact-cta:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(255, 131, 0, 0.4);
+            box-shadow: 0 12px 30px rgba(10, 36, 114, 0.4);
         }
 
         .contact-cta .phone {
@@ -441,11 +441,25 @@
             border-radius: 25px;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+            animation: pulse 2s infinite;
         }
 
         .skill-tag:hover {
             background: var(--primary-gradient);
             transform: translateY(-2px);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(14, 107, 168, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(14, 107, 168, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(14, 107, 168, 0);
+            }
         }
 
         .experience-timeline {
@@ -561,7 +575,7 @@
         }
 
         .tech-tag {
-            background: rgba(255, 131, 0, 0.1);
+            background: rgba(14, 107, 168, 0.1);
             color: var(--text-accent);
             padding: 4px 12px;
             border-radius: 15px;
@@ -629,7 +643,7 @@
         }
 
         .contact-item.clickable:hover {
-            background: rgba(255, 131, 0, 0.1);
+            background: rgba(14, 107, 168, 0.1);
         }
 
         .contact-icon {
@@ -675,7 +689,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--text-accent);
-            box-shadow: 0 0 20px rgba(255, 131, 0, 0.2);
+            box-shadow: 0 0 20px rgba(14, 107, 168, 0.2);
         }
 
         footer {
