@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santhosh Kumar M | Angular Developer</title>
-    <meta name="description" content="Angular Developer with 2.5+ years of experience in FinTech platforms, building scalable UIs for Fortune 500 clients">
+    <title>Santhosh Kumar M | Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer with 2.5+ years of experience in FinTech platforms, building scalable UIs for Fortune 500 clients">
     <meta name="darkreader-lock" content="true">
     <meta name="color-scheme" content="dark">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,51 +13,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Vibrant Windows 11 Glow Theme - Blue, Pink, Purple, Orange */
-            --primary-gradient: linear-gradient(135deg, #192AFF 0%, #3798FF 25%, #FF007D 75%, #FF6B00 100%);
-            --secondary-gradient: linear-gradient(135deg, #3798FF 0%, #8A2BE2 50%, #FF007D 100%);
-            --accent-gradient: linear-gradient(135deg, #192AFF 0%, #FF007D 50%, #00FFFF 100%);
-            --blue-gradient: linear-gradient(135deg, #192AFF 0%, #3798FF 100%);
-            --pink-gradient: linear-gradient(135deg, #FF007D 0%, #FF0601 100%);
-            --purple-gradient: linear-gradient(135deg, #8A2BE2 0%, #9932CC 100%);
-            --orange-gradient: linear-gradient(135deg, #FF6B00 0%, #FF4500 100%);
-            --cyan-gradient: linear-gradient(135deg, #00FFFF 0%, #00CED1 100%);
-            --dark-gradient: linear-gradient(135deg, #011423 0%, #00006C 50%, #011C37 100%);
+            /* Code-inspired Theme based on Image Colors */
+            --primary-gradient: linear-gradient(135deg, #10002B 0%, #240046 25%, #3C096C 50%, #5A189A 75%, #7B2CBF 100%);
+            --secondary-gradient: linear-gradient(135deg, #240046 0%, #5A189A 50%, #9D4EDD 100%);
+            --accent-gradient: linear-gradient(135deg, #3C096C 0%, #7B2CBF 50%, #C77DFF 100%);
+            --highlight-gradient: linear-gradient(135deg, #9D4EDD 0%, #C77DFF 50%, #E0AAFF 100%);
+            --dark-gradient: linear-gradient(135deg, #10002B 0%, #240046 50%, #3C096C 100%);
             
-            /* Glass Morphism with Enhanced Glow */
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-hover: rgba(255, 255, 255, 0.06);
-            --glass-active: rgba(255, 255, 255, 0.1);
+            /* Glass Morphism with Subtle Code Glow */
+            --glass-bg: rgba(224, 170, 255, 0.03);
+            --glass-border: rgba(224, 170, 255, 0.08);
+            --glass-hover: rgba(224, 170, 255, 0.06);
+            --glass-active: rgba(224, 170, 255, 0.1);
             
             /* Text Colors */
-            --text-primary: #FFFFFF;
-            --text-secondary: #E6EDF3;
-            --text-muted: #7D8590;
-            --text-accent: #3798FF;
+            --text-primary: #E0AAFF;
+            --text-heading: #E0AAFF;
+            --text-secondary: #E0AAFF;
+            --text-muted: #E0AAFF;
+            --text-accent: #E0AAFF;
             
-            /* Vibrant Glow Colors */
-            --royal-blue: #192AFF;
-            --electric-purple: #8A2BE2;
-            --deep-navy: #011423;
-            --dark-indigo: #00006C;
-            --bright-red: #FF0601;
-            --midnight-blue: #011C37;
-            --bright-orange: #FF6B00;
-            --sky-blue: #3798FF;
-            --hot-pink: #FF007D;
-            --electric-cyan: #00FFFF;
-            --dark-purple: #9932CC;
-            --orange-red: #FF4500;
+            /* Code-inspired Theme Colors */
+            --deep-purple: #10002B;
+            --royal-purple: #240046;
+            --violet: #3C096C;
+            --medium-purple: #5A189A;
+            --bright-purple: #7B2CBF;
+            --light-purple: #9D4EDD;
+            --lavender: #C77DFF;
+            --pale-lavender: #E0AAFF;
             
-            /* Ultra Bright Glow Effects */
-            --shadow-glow: 0 0 50px rgba(25, 42, 255, 0.6);
-            --shadow-card: 0 8px 32px rgba(1, 20, 35, 0.8);
-            --shadow-blue: 0 0 40px rgba(25, 42, 255, 0.5);
-            --shadow-pink: 0 0 40px rgba(255, 0, 125, 0.5);
-            --shadow-purple: 0 0 40px rgba(138, 43, 226, 0.5);
-            --shadow-orange: 0 0 40px rgba(255, 107, 0, 0.5);
-            --shadow-cyan: 0 0 40px rgba(0, 255, 255, 0.5);
+            /* Subtle Code Glow Effects */
+            --shadow-glow: 0 0 30px rgba(157, 78, 221, 0.3);
+            --shadow-card: 0 8px 32px rgba(16, 0, 43, 0.8);
+            --shadow-primary: 0 0 25px rgba(123, 44, 191, 0.3);
+            --shadow-secondary: 0 0 25px rgba(157, 78, 221, 0.3);
+            --shadow-accent: 0 0 25px rgba(199, 125, 255, 0.3);
+            --shadow-highlight: 0 0 25px rgba(224, 170, 255, 0.3);
         }
 
         * {
@@ -74,28 +66,7 @@
             scroll-behavior: smooth;
         }
 
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
 
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 4s infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
 
         .floating-shapes {
             position: fixed;
@@ -117,12 +88,11 @@
             top: 10%;
             left: 10%;
             width: 80px;
-            height: 80px;
-            background: var(--blue-gradient);
-            border-radius: 50%;
+            height: 3px;
+            background: var(--primary-gradient);
             animation-delay: 0s;
-            box-shadow: var(--shadow-blue);
-            opacity: 0.2;
+            box-shadow: var(--shadow-primary);
+            opacity: 0.15;
         }
 
         .shape:nth-child(2) {
@@ -130,11 +100,11 @@
             right: 10%;
             width: 120px;
             height: 120px;
-            background: var(--pink-gradient);
-            border-radius: 20px;
+            background: var(--secondary-gradient);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             animation-delay: -5s;
-            box-shadow: var(--shadow-pink);
-            opacity: 0.2;
+            box-shadow: var(--shadow-secondary);
+            opacity: 0.15;
         }
 
         .shape:nth-child(3) {
@@ -142,23 +112,23 @@
             left: 70%;
             width: 60px;
             height: 60px;
-            background: var(--purple-gradient);
-            transform: rotate(45deg);
+            background: var(--accent-gradient);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
             animation-delay: -10s;
-            box-shadow: var(--shadow-purple);
-            opacity: 0.2;
+            box-shadow: var(--shadow-accent);
+            opacity: 0.15;
         }
 
         .shape:nth-child(4) {
             top: 20%;
             right: 30%;
             width: 40px;
-            height: 40px;
-            background: var(--orange-gradient);
-            border-radius: 50%;
+            height: 2px;
+            background: var(--highlight-gradient);
+            transform: rotate(-45deg);
             animation-delay: -15s;
-            box-shadow: var(--shadow-orange);
-            opacity: 0.2;
+            box-shadow: var(--shadow-highlight);
+            opacity: 0.15;
         }
 
         .shape:nth-child(5) {
@@ -166,17 +136,34 @@
             left: 20%;
             width: 100px;
             height: 100px;
-            background: var(--cyan-gradient);
-            border-radius: 30px;
+            background: var(--primary-gradient);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             animation-delay: -20s;
-            box-shadow: var(--shadow-cyan);
-            opacity: 0.2;
+            box-shadow: var(--shadow-primary);
+            opacity: 0.15;
         }
 
         @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-            100% { transform: translateY(0) rotate(360deg); }
+            0% { 
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.15;
+            }
+            25% { 
+                transform: translateY(-10px) rotate(90deg) scale(1.02);
+                opacity: 0.2;
+            }
+            50% { 
+                transform: translateY(-15px) rotate(180deg) scale(1);
+                opacity: 0.15;
+            }
+            75% { 
+                transform: translateY(-5px) rotate(270deg) scale(0.98);
+                opacity: 0.1;
+            }
+            100% { 
+                transform: translateY(0) rotate(360deg) scale(1);
+                opacity: 0.15;
+            }
         }
 
         .container {
@@ -189,15 +176,38 @@
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border-radius: 8px;
             box-shadow: var(--shadow-card);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(224, 170, 255, 0.05),
+                transparent
+            );
+            transition: 0.5s;
         }
 
         .glass-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-glow);
             background: var(--glass-hover);
+            border-color: var(--text-secondary);
+        }
+
+        .glass-card:hover::before {
+            left: 100%;
             border-color: rgba(25, 42, 255, 0.5);
         }
 
@@ -207,10 +217,10 @@
             width: 100%;
             z-index: 1000;
             padding: 20px 0;
-            background: rgba(1, 20, 35, 0.95);
+            background: rgba(16, 0, 43, 0.95);
             backdrop-filter: blur(30px);
-            border-bottom: 1px solid var(--glass-border);
-            box-shadow: 0 4px 25px rgba(25, 42, 255, 0.2);
+            border-bottom: 1px solid rgba(224, 170, 255, 0.1);
+            box-shadow: 0 4px 25px rgba(93, 24, 154, 0.2);
         }
 
         nav {
@@ -228,10 +238,13 @@
         .logo {
             font-size: 24px;
             font-weight: 800;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #E0AAFF;
+            text-shadow: 0 0 15px rgba(224, 170, 255, 0.3);
+            transition: text-shadow 0.3s ease;
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 20px rgba(224, 170, 255, 0.5);
         }
 
         .nav-links {
@@ -308,31 +321,23 @@
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #192AFF 0%, #3798FF 25%, #FF007D 75%, #FF6B00 100%) !important;
-            -webkit-background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            background-clip: text !important;
+            color: var(--text-primary) !important;
+            -webkit-text-fill-color: var(--text-primary) !important;
             position: relative;
             /* Prevent Dark Reader interference */
             filter: none !important;
         }
 
-        /* Fallback for browsers that don't support background-clip: text */
-        @supports not (-webkit-background-clip: text) {
-            .gradient-text {
-                background: none !important;
-                color: #58A6FF !important;
-                -webkit-text-fill-color: #58A6FF !important;
-            }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-heading) !important;
+            -webkit-text-fill-color: var(--text-heading) !important;
         }
 
-        /* Dark Reader Prevention - Force override any dark reader modifications */
+        /* Dark Reader Prevention */
         .gradient-text[data-darkreader-inline-bgcolor],
         .gradient-text[data-darkreader-inline-bgimage] {
-            background: linear-gradient(135deg, #192AFF 0%, #3798FF 25%, #FF007D 75%, #FF6B00 100%) !important;
-            -webkit-background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            background-clip: text !important;
+            color: var(--text-primary) !important;
+            -webkit-text-fill-color: var(--text-primary) !important;
         }
 
         /* Additional protection against extension interference */
@@ -411,61 +416,159 @@
         }
 
         .profile-card {
-            background: var(--glass-bg);
+            background: linear-gradient(135deg, rgba(93, 24, 154, 0.7) 0%, rgba(60, 9, 108, 0.7) 100%);
             backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(224, 170, 255, 0.1);
             border-radius: 30px;
             padding: 30px;
             text-align: center;
-            box-shadow: var(--shadow-card);
+            box-shadow: 0 8px 32px rgba(16, 0, 43, 0.8);
+            position: relative;
+            overflow: hidden;
+            color: #FFFFFF;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                rgba(157, 78, 221, 0.1) 0%,
+                rgba(224, 170, 255, 0.1) 50%,
+                rgba(157, 78, 221, 0.1) 100%
+            );
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+
+        .profile-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 30px;
+            background: linear-gradient(135deg, 
+                rgba(224, 170, 255, 0.1) 0%,
+                rgba(157, 78, 221, 0.05) 100%
+            );
+            pointer-events: none;
         }
 
         .profile-avatar {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, #5A189A 0%, #7B2CBF 100%);
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4rem;
-            color: white;
+            color: #E0AAFF;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 32px rgba(16, 0, 43, 0.5);
+        }
+
+        .profile-avatar::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(135deg, rgba(224, 170, 255, 0.5), rgba(157, 78, 221, 0.5));
+            border-radius: 50%;
+            z-index: -1;
+            animation: rotate-subtle 4s linear infinite;
+        }
+
+        @keyframes rotate-subtle {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .profile-info h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
+            color: #E0AAFF;
+            text-shadow: 0 0 10px rgba(224, 170, 255, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .profile-info p {
-            color: var(--text-secondary);
+            color: #E0AAFF;
             font-size: 0.95rem;
             margin-bottom: 15px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-info .location {
+            color: #E0AAFF;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
         }
 
         .contact-cta {
-            background: var(--secondary-gradient);
-            color: white;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.3) 0%, rgba(93, 24, 154, 0.3) 100%);
+            color: #E0AAFF;
             padding: 15px 25px;
             border-radius: 15px;
             margin: 15px 0;
             font-weight: 600;
             text-align: center;
-            box-shadow: var(--shadow-glow);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(224, 170, 255, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(224, 170, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(224, 170, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
         }
 
         .contact-cta:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-blue);
+            box-shadow: 0 6px 25px rgba(224, 170, 255, 0.25);
+        }
+
+        .contact-cta:hover::before {
+            left: 100%;
         }
 
         .contact-cta .phone {
             font-size: 1.1rem;
             display: block;
             margin-bottom: 5px;
+            color: #FFFFFF;
+            text-shadow: 0 0 10px rgba(224, 170, 255, 0.3);
         }
 
         .contact-cta .email {
@@ -547,19 +650,43 @@
         }
 
         .skill-tag {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
+            background: rgba(93, 24, 154, 0.3);
+            border: 1px solid rgba(224, 170, 255, 0.2);
             padding: 8px 16px;
             border-radius: 25px;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            color: #E0AAFF;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(224, 170, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
         }
 
         .skill-tag:hover {
-            background: var(--primary-gradient);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
-            color: white;
+            background: rgba(123, 44, 191, 0.4);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 20px rgba(224, 170, 255, 0.2);
+            border-color: rgba(224, 170, 255, 0.3);
+        }
+
+        .skill-tag:hover::before {
+            left: 100%;
         }
 
         .experience-timeline {
@@ -962,7 +1089,7 @@
                     <h1>
                         Hi, I'm <span class="gradient-text">Santhosh Kumar M</span>
                     </h1>
-                    <p class="subtitle typewriter">Angular Developer & FinTech Specialist</p>
+                    <p class="subtitle typewriter">Full Stack Developer & FinTech Specialist</p>
                     <div class="hero-description">
                         With 2.5+ years of experience building scalable, high-performance UIs for Fortune 500 FinTech platforms. 
                         I specialize in Angular 12+, TypeScript, and creating exceptional user experiences for global financial institutions like Barclays, BlackStone, and Apollo Global Management.
@@ -977,7 +1104,7 @@
                         <div class="profile-avatar">SK</div>
                         <div class="profile-info">
                             <h3>Santhosh Kumar M</h3>
-                            <p>Angular Developer<br>Theni, Tamil Nadu, India</p>
+                            <p>Full Stack Developer<br>Theni, Tamil Nadu, India</p>
                             <div class="contact-cta">
                                 <div class="phone">📞 +91 8124258694</div>
                                 <div class="email">✉️ santhoshkumar3@gmail.com</div>
@@ -1537,8 +1664,8 @@
     <script>
         // Create stars
         function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const numStars = 100;
+            // Removed star creation as per request
+            return;
             
             for (let i = 0; i < numStars; i++) {
                 const star = document.createElement('div');
