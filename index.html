@@ -5,23 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santhosh Kumar M | Angular Developer</title>
     <meta name="description" content="Angular Developer with 2.5+ years of experience in FinTech platforms, building scalable UIs for Fortune 500 clients">
+    <meta name="darkreader-lock" content="true">
+    <meta name="color-scheme" content="dark">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #ff8300 0%, #f72585 50%, #8E008B 100%);
-            --secondary-gradient: linear-gradient(135deg, #FF8300 0%, #FF6200 50%, #f72585 100%);
-            --accent-gradient: linear-gradient(135deg, #FF6200 0%, #f72585 100%);
-            --dark-gradient: linear-gradient(135deg, #2e005d 0%, #1a1a2e 100%);
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --text-primary: #ffffff;
-            --text-secondary: #b8c5d6;
-            --text-accent: #FF8300;
-            --shadow-glow: 0 20px 40px rgba(46, 0, 93, 0.4);
-            --shadow-card: 0 8px 32px rgba(31, 38, 135, 0.37);
+            /* Vibrant Windows 11 Glow Theme - Blue, Pink, Purple, Orange */
+            --primary-gradient: linear-gradient(135deg, #192AFF 0%, #3798FF 25%, #FF007D 75%, #FF6B00 100%);
+            --secondary-gradient: linear-gradient(135deg, #3798FF 0%, #8A2BE2 50%, #FF007D 100%);
+            --accent-gradient: linear-gradient(135deg, #192AFF 0%, #FF007D 50%, #00FFFF 100%);
+            --blue-gradient: linear-gradient(135deg, #192AFF 0%, #3798FF 100%);
+            --pink-gradient: linear-gradient(135deg, #FF007D 0%, #FF0601 100%);
+            --purple-gradient: linear-gradient(135deg, #8A2BE2 0%, #9932CC 100%);
+            --orange-gradient: linear-gradient(135deg, #FF6B00 0%, #FF4500 100%);
+            --cyan-gradient: linear-gradient(135deg, #00FFFF 0%, #00CED1 100%);
+            --dark-gradient: linear-gradient(135deg, #011423 0%, #00006C 50%, #011C37 100%);
+            
+            /* Glass Morphism with Enhanced Glow */
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-hover: rgba(255, 255, 255, 0.06);
+            --glass-active: rgba(255, 255, 255, 0.1);
+            
+            /* Text Colors */
+            --text-primary: #FFFFFF;
+            --text-secondary: #E6EDF3;
+            --text-muted: #7D8590;
+            --text-accent: #3798FF;
+            
+            /* Vibrant Glow Colors */
+            --royal-blue: #192AFF;
+            --electric-purple: #8A2BE2;
+            --deep-navy: #011423;
+            --dark-indigo: #00006C;
+            --bright-red: #FF0601;
+            --midnight-blue: #011C37;
+            --bright-orange: #FF6B00;
+            --sky-blue: #3798FF;
+            --hot-pink: #FF007D;
+            --electric-cyan: #00FFFF;
+            --dark-purple: #9932CC;
+            --orange-red: #FF4500;
+            
+            /* Ultra Bright Glow Effects */
+            --shadow-glow: 0 0 50px rgba(25, 42, 255, 0.6);
+            --shadow-card: 0 8px 32px rgba(1, 20, 35, 0.8);
+            --shadow-blue: 0 0 40px rgba(25, 42, 255, 0.5);
+            --shadow-pink: 0 0 40px rgba(255, 0, 125, 0.5);
+            --shadow-purple: 0 0 40px rgba(138, 43, 226, 0.5);
+            --shadow-orange: 0 0 40px rgba(255, 107, 0, 0.5);
+            --shadow-cyan: 0 0 40px rgba(0, 255, 255, 0.5);
         }
 
         * {
@@ -82,9 +118,11 @@
             left: 10%;
             width: 80px;
             height: 80px;
-            background: var(--primary-gradient);
+            background: var(--blue-gradient);
             border-radius: 50%;
             animation-delay: 0s;
+            box-shadow: var(--shadow-blue);
+            opacity: 0.2;
         }
 
         .shape:nth-child(2) {
@@ -92,9 +130,11 @@
             right: 10%;
             width: 120px;
             height: 120px;
-            background: var(--secondary-gradient);
+            background: var(--pink-gradient);
             border-radius: 20px;
             animation-delay: -5s;
+            box-shadow: var(--shadow-pink);
+            opacity: 0.2;
         }
 
         .shape:nth-child(3) {
@@ -102,9 +142,35 @@
             left: 70%;
             width: 60px;
             height: 60px;
-            background: var(--accent-gradient);
+            background: var(--purple-gradient);
             transform: rotate(45deg);
             animation-delay: -10s;
+            box-shadow: var(--shadow-purple);
+            opacity: 0.2;
+        }
+
+        .shape:nth-child(4) {
+            top: 20%;
+            right: 30%;
+            width: 40px;
+            height: 40px;
+            background: var(--orange-gradient);
+            border-radius: 50%;
+            animation-delay: -15s;
+            box-shadow: var(--shadow-orange);
+            opacity: 0.2;
+        }
+
+        .shape:nth-child(5) {
+            bottom: 30%;
+            left: 20%;
+            width: 100px;
+            height: 100px;
+            background: var(--cyan-gradient);
+            border-radius: 30px;
+            animation-delay: -20s;
+            box-shadow: var(--shadow-cyan);
+            opacity: 0.2;
         }
 
         @keyframes float {
@@ -131,6 +197,8 @@
         .glass-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-glow);
+            background: var(--glass-hover);
+            border-color: rgba(25, 42, 255, 0.5);
         }
 
         header {
@@ -139,9 +207,10 @@
             width: 100%;
             z-index: 1000;
             padding: 20px 0;
-            background: rgba(12, 12, 12, 0.8);
-            backdrop-filter: blur(20px);
+            background: rgba(1, 20, 35, 0.95);
+            backdrop-filter: blur(30px);
             border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 4px 25px rgba(25, 42, 255, 0.2);
         }
 
         nav {
@@ -214,7 +283,7 @@
 
         .download-resume:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 131, 0, 0.4);
+            box-shadow: var(--shadow-glow);
         }
 
         .hero {
@@ -239,11 +308,54 @@
         }
 
         .gradient-text {
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: linear-gradient(135deg, #192AFF 0%, #3798FF 25%, #FF007D 75%, #FF6B00 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            position: relative;
+            /* Prevent Dark Reader interference */
+            filter: none !important;
         }
+
+        /* Fallback for browsers that don't support background-clip: text */
+        @supports not (-webkit-background-clip: text) {
+            .gradient-text {
+                background: none !important;
+                color: #58A6FF !important;
+                -webkit-text-fill-color: #58A6FF !important;
+            }
+        }
+
+        /* Dark Reader Prevention - Force override any dark reader modifications */
+        .gradient-text[data-darkreader-inline-bgcolor],
+        .gradient-text[data-darkreader-inline-bgimage] {
+            background: linear-gradient(135deg, #192AFF 0%, #3798FF 25%, #FF007D 75%, #FF6B00 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+
+        /* Additional protection against extension interference */
+        .gradient-text {
+            --darkreader-bgimg--primary-gradient: none !important;
+            --darkreader-bgcolor--primary-gradient: transparent !important;
+        }
+
+        /* Force override Dark Reader variables globally */
+        :root {
+            --darkreader-bgimg--primary-gradient: none !important;
+            --darkreader-bgcolor--primary-gradient: transparent !important;
+        }
+
+        /* Specific Dark Reader override for gradient elements */
+        html[data-darkreader-mode] .gradient-text,
+        html[data-darkreader-scheme] .gradient-text {
+            background: linear-gradient(135deg, #192AFF 0%, #3798FF 25%, #FF007D 75%, #FF6B00 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+
 
         .hero-text .subtitle {
             font-size: 1.5rem;
@@ -291,7 +403,7 @@
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 25px 50px rgba(255, 131, 0, 0.4);
+            box-shadow: var(--shadow-glow);
         }
 
         .hero-image {
@@ -341,13 +453,13 @@
             margin: 15px 0;
             font-weight: 600;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(255, 131, 0, 0.3);
+            box-shadow: var(--shadow-glow);
             transition: all 0.3s ease;
         }
 
         .contact-cta:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(255, 131, 0, 0.4);
+            box-shadow: var(--shadow-blue);
         }
 
         .contact-cta .phone {
@@ -446,6 +558,8 @@
         .skill-tag:hover {
             background: var(--primary-gradient);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+            color: white;
         }
 
         .experience-timeline {
@@ -475,7 +589,7 @@
             height: 12px;
             background: var(--primary-gradient);
             border-radius: 50%;
-            box-shadow: 0 0 20px rgba(46, 0, 93, 0.5);
+            box-shadow: var(--shadow-glow);
         }
 
         .timeline-content {
@@ -561,12 +675,13 @@
         }
 
         .tech-tag {
-            background: rgba(255, 131, 0, 0.1);
+            background: rgba(55, 152, 255, 0.1);
             color: var(--text-accent);
             padding: 4px 12px;
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 500;
+            border: 1px solid rgba(55, 152, 255, 0.3);
         }
 
         .achievements-list {
@@ -629,7 +744,7 @@
         }
 
         .contact-item.clickable:hover {
-            background: rgba(255, 131, 0, 0.1);
+            background: rgba(55, 152, 255, 0.1);
         }
 
         .contact-icon {
@@ -675,7 +790,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--text-accent);
-            box-shadow: 0 0 20px rgba(255, 131, 0, 0.2);
+            box-shadow: 0 0 25px rgba(25, 42, 255, 0.5);
         }
 
         footer {
@@ -683,8 +798,9 @@
             padding: 40px 20px;
             border-top: 1px solid var(--glass-border);
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(30px);
             width: 100%;
+            box-shadow: 0 -4px 25px rgba(25, 42, 255, 0.2);
         }
 
         .footer-content {
@@ -813,6 +929,8 @@
     <div class="stars" id="stars"></div>
     
     <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
         <div class="shape"></div>
         <div class="shape"></div>
         <div class="shape"></div>
@@ -1361,7 +1479,13 @@
 
                 <div class="contact-form glass-card">
                     <h3 style="margin-bottom: 30px; color: var(--text-accent);">Send Message</h3>
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formsubmit.co/santhozkumar3@gmail.com" method="POST">
+                        <!-- Formsubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_autoresponse" value="Thank you for contacting Santhosh Kumar M! Your message has been received and I'll get back to you within 24-48 hours.">
+                        
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -1372,15 +1496,15 @@
                         </div>
                         <div class="form-group">
                             <label for="company">Company (Optional)</label>
-                            <input type="text" id="company" name="company">
+                            <input type="text" id="company" name="company" placeholder="Your company name">
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <input type="text" id="subject" name="_subject" required placeholder="What's this about?">
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or inquiry..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">
                             <i class="fas fa-paper-plane"></i> Send Message
@@ -1464,31 +1588,28 @@
             });
         }
 
-        // Form submission
+        // Form submission with Formsubmit.co
         function handleForm() {
             const form = document.getElementById('contactForm');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
             form.addEventListener('submit', function(e) {
-                e.preventDefault();
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
                 
-                // Get form data
-                const formData = new FormData(form);
-                const data = Object.fromEntries(formData.entries());
+                // Let Formsubmit handle the actual submission
+                // The form will be submitted normally to Formsubmit.co
                 
-                // Create mailto link
-                const subject = encodeURIComponent(data.subject);
-                const body = encodeURIComponent(
-                    `Name: ${data.name}\n` +
-                    `Email: ${data.email}\n` +
-                    `Company: ${data.company || 'Not specified'}\n\n` +
-                    `Message:\n${data.message}`
-                );
-                
-                const mailtoLink = `mailto:santhoshkumar3@gmail.com?subject=${subject}&body=${body}`;
-                window.location.href = mailtoLink;
-                
-                // Show success message
-                alert('Thank you for your message! Your default email client will open.');
-                form.reset();
+                // Note: Formsubmit will redirect to the _next URL after successful submission
+                // If no _next URL is provided, it will show Formsubmit's default success page
+            });
+            
+            // Reset button state if user navigates back
+            window.addEventListener('pageshow', function() {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
             });
         }
 
